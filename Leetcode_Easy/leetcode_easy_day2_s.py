@@ -186,6 +186,7 @@ def strStr(haystack, needle):
             return start
     return -1
 
+# ---------------------------------------------------
 
 def strStr(haystack, needle):
     """
@@ -220,6 +221,7 @@ def strStr(haystack, needle):
 
     return -1
 
+# ---------------------------------------------------
 
 def strStr(haystack, needle):
     """
@@ -294,6 +296,7 @@ def searchInsert(nums, target):
                 if (target > nums[i]) & (target < nums[i + 1]):
                     return i + 1
 
+# ---------------------------------------------------
 
 def searchInsert(nums, target):
     """
