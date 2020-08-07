@@ -20,8 +20,15 @@ def findRepeatNumber(nums):
                 nums[i] = nums[nums[i]] # nums[nums[i]]（1）替换nums[i]（2）
                 nums[nums[i]] = tmp # 将tmp（2）赋值给nums[nums[i]]（nums[1]），但本来要赋值给nums[0]
                 这样替换错误，本来要2和1替换
+                因此nums[i],nums[nums[i]] = nums[nums[i]],nums[i]就是这个错误
                 """
                 nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
+                """
+                tmp = nums[nums[i]]
+                nums[nums[i]] = nums[i]
+                nums[i] = tmp
+                不会出现此类错误
+                """
 
 
 # ---------------------------------------------------
