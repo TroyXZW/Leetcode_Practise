@@ -25,7 +25,7 @@ def selectionSort(lyst):
 
 
 # ------------------------------------------- 冒泡排序 -------------------------------------------
-def bubbleSort_improved(lyst):
+def bubbleSort_improved(items):
     """
     原本要排序的列表即为有序列表，则添加一个bool变量用做判断，如无交换则直接return
     m每次冒泡其实就是把当前最大元素放最后，下一次循环所以就可以不考虑len(items) - 1 - i
