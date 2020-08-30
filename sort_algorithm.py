@@ -14,6 +14,9 @@
 
 # ------------------------------------------- 选择排序 -------------------------------------------
 def selectionSort(lyst):
+    """
+    时间复杂度 O(n2)
+    """
     for i in range(len(lyst)):
         minIndex = i
         for j in range(i + 1, len(lyst)):
@@ -29,6 +32,7 @@ def bubbleSort_improved(items):
     """
     原本要排序的列表即为有序列表，则添加一个bool变量用做判断，如无交换则直接return
     m每次冒泡其实就是把当前最大元素放最后，下一次循环所以就可以不考虑len(items) - 1 - i
+    时间复杂度 O(n2)
     """
     for i in range(len(items) - 1):
         flag = False
@@ -50,6 +54,7 @@ if __name__ == '__main__':
 def insertionSort(arr):
     """
     这种是直接将新数字放到已排好数据里一个个比较后插入
+    时间复杂度 O(n2)
     """
     n = len(arr)
     for i in range(1, n):
@@ -86,6 +91,9 @@ a = deepcopy(lyst)
 
 
 def quickSort(lyst, left, right):
+    """
+    时间复杂度 O(nlogn)
+    """
     # 需要加上left和right的判断，不然会超过最大迭代次数，导致栈内存溢出
     if left > right:
         return
@@ -155,6 +163,9 @@ def QuickSort(lst):
 
 
 def mergeSort(lyst):
+    """
+    时间复杂度 O(nlogn)
+    """
     if len(lyst) == 1:
         return lyst
     # 取拆分的中间位置，拆分成左右两个子串
@@ -207,6 +218,9 @@ def big_endian(lyst, start, end):
 
 
 def heap_sort(lyst):
+    """
+    时间复杂度 O(nlogn)
+    """
     first = len(lyst) // 2 - 1
     for start in range(first, -1, -1):
         big_endian(lyst, start, len(lyst) - 1)
@@ -224,6 +238,9 @@ import math
 
 
 def radix_sort(arr):
+    """
+    时间复杂度 O(n)
+    """
     radix = 10  # 基数
     k = int(math.ceil(math.log(max(arr), radix)))  # k可以表示任意整数
     # math.log对arr中最大的数取对数，log(max(arr),10),并对其取整得到最大值的位数
@@ -265,6 +282,8 @@ if __name__ == "__main__":
 def countingSort(arr):
     """
     计数排序只能给非负整数排序，如果要排序的数据是其他类型的，要将其在不改变相对大小的情况下，转化为非负整数
+    桶内排序,插入排序
+    时间复杂度 O(n)
     """
     bucketLen = max(arr) + 1
     bucket = [0] * bucketLen
@@ -296,6 +315,7 @@ if __name__ == '__main__':
 def insertionSort(b):
     """
     桶内排序,插入排序
+    时间复杂度 O(n)
     """
     for i in range(1, len(b)):
         up = b[i]
