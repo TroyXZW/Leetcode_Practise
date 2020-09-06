@@ -102,6 +102,10 @@ class Solution:
 # ------------------------------------------- 快速排序的思路，找出数组中第K大的数 -------------------------------------------  
 
 class Solution(object):
+    """
+    未完
+    """
+    
     def getLeastNumbers(self, arr, k):
         if k > len(arr) or k <= 0:
             return [] 
@@ -131,3 +135,6 @@ class Solution(object):
             arr[high] = arr[low]
         arr[low] = temp
         return low
+
+# ------------------------------------------- 快速排序的思路，找出数组中第K大的数 -------------------------------------------
+
