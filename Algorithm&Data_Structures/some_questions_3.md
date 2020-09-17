@@ -1,5 +1,9 @@
 # 动脑子认老乡 
 
+前序: 根节点 左子树 右子树
+中序: 左子树 根节点 右子树
+后序: 左子树 右子树 根节点
+层序: 遍历每一层
 
 [题源]https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=137&opencustomeinput=true
 
