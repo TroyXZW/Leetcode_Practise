@@ -1,7 +1,7 @@
 # 动脑子认老乡 
 
-"""
-https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=137&opencustomeinput=true
+
+[题源]https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=137&opencustomeinput=true
 
 题目描述:								
 大学的同学来自全国各地，对于远离家乡步入陌生大学校园的大一新生来说，碰到老乡是多么激动的一件事，
@@ -28,7 +28,7 @@ https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=
 0
 3
 
-"""
+'''
 
 #循环测试样例
 while True:
@@ -56,3 +56,4 @@ while True:
             	#认识的同乡加入同乡集合，同乡的同乡还是同乡
                 s.add(i[1-j])
     print(len(s) - 1)
+'''
