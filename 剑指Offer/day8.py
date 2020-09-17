@@ -47,3 +47,40 @@ def mergeTwoLists(l1, l2):
         
 # ------------------------------------------- 26. 树的子结构 -------------------------------------------
 # ---------------------------------------------------    
+
+class Solution:
+    """
+    B 属于 A 的一部分也可以
+    https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/solution/pi-pei-lei-er-cha-shu-ti-mu-zong-jie-by-z1m/
+    """
+    def check(self, s, t): # 这里 t 可能为空
+        if not t:
+            return True
+        if not s:
+            return False
+        
+        return s.val == t.val and self.check(s.left, t.left) and self.check(s.right, t.right)
+
+    def isSubStructure(self, A: TreeNode, B: TreeNode) -> bool:
+        if not A or not B: return False
+        return self.check(A, B) or self.isSubStructure(A.left, B) or self.isSubStructure(A.right, B)
+
+# ---------------------------------------------------    
+class Solution:
+    """
+    B 必须是 A 的字数，即B的叶节点也是A的叶节点
+    https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/solution/pi-pei-lei-er-cha-shu-ti-mu-zong-jie-by-z1m/
+    """
+    def check(self, s, t): # 这里 t 可能为空
+        if not t and not s:
+            return True
+        if not s or not t:
+            return False
+        # 保证s.val == t.val，才能执行self.check(s.left, t.left)，才能执行self.check(s.right, t.right)，从而首先子树都相同
+        return s.val == t.val and self.check(s.left, t.left) and self.check(s.right, t.right)  
+
+    def isSubStructure(self, A: TreeNode, B: TreeNode) -> bool:
+        if not A or not B: return False
+        return self.check(A, B) or self.isSubStructure(A.left, B) or self.isSubStructure(A.right, B)    
+
+
