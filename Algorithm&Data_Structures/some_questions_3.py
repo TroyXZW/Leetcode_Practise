@@ -1,4 +1,4 @@
-# ------------------------------------------- 动脑子认老乡 -------------------------------------------
+# 动脑子认老乡 
 
 """
 https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=137&opencustomeinput=true
