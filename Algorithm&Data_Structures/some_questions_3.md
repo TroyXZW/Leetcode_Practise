@@ -1,6 +1,6 @@
 # 动脑子认老乡:smile:
 
-[OJ输入输出例题](https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=137&opencustomeinput=true)
+[关于OJ的输入输出例题](https://exercise.acmcoder.com/online/online_judge_ques?ques_id=9579&konwledgeId=137&opencustomeinput=true)
 
 ## 题目描述:								
 大学的同学来自全国各地，对于远离家乡步入陌生大学校园的大一新生来说，碰到老乡是多么激动的一件事，\
