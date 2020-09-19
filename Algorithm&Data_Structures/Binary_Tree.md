@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
+# 二叉树的建立和遍历，二叉查询树
 
+```
 class Node(object):
     """节点类"""
     def __init__(self, elem=-1, lchild=None, rchild=None):
@@ -32,7 +32,6 @@ class Tree(object):
                 self.myQueue.pop(0)  # 如果该结点存在右子树，将此结点丢弃。
 
 
-#----------------------------------------------------------------
 """
 二叉树的前中后序,递归
 """
@@ -129,9 +128,11 @@ class Tree(object):
                 myQueue.append(node.lchild)
             if node.rchild != None:
                 myQueue.append(node.rchild)
+```
 
-# ------------------------------------------- 二叉查找树的搜索、插入、删除 -------------------------------------------
+# 二叉查找树的搜索、插入、删除
 
+```
 class BinarySearchTree(object):
     def __init__(self, key):  # 定义节点结构
         self.key = key 
@@ -208,3 +209,4 @@ print(bst.findMax())
 print(bst.findMin())
 print(bst.find(10))
 print(bst.delete(11))            
+```
