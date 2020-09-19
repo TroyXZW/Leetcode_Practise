@@ -1,4 +1,4 @@
-# practise:smile
+# practise:smile:
 
 ## 刷题笔记
 
