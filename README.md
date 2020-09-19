@@ -1,5 +1,5 @@
-# practise
+# practise:smile:smile:smile:
 
-刷题笔记
+## 刷题笔记
 
-每日三题，加油！
+**每日三题，加油！**
