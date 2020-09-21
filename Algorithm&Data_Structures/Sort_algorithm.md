@@ -13,12 +13,10 @@
     其他
 
 
-## 选择排序 
+## 选择排序
+时间复杂度 O(n2)
 ```
 def selectionSort(lyst):
-    """
-    时间复杂度 O(n2)
-    """
     for i in range(len(lyst)):
         minIndex = i
         for j in range(i + 1, len(lyst)):
@@ -198,7 +196,6 @@ print("mergeSort:", mergeSort(lyst))
 1.从下至上，从右至左，对每个节点进行调整，以得到一个大顶堆
 2.首尾互换，尾部元素已是有序序列，堆元素个数减1，此部分仍为无序序列，继续调整
 最坏，最好，平均时间复杂度均为O(nlogn)
-
 ```
 def big_endian(lyst, start, end):
     '''
