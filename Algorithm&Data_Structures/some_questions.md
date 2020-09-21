@@ -1,4 +1,6 @@
-# 判断单链表是否有环，并找出环的入口
+# 面试里的一些问题:punch:
+
+## 判断单链表是否有环，并找出环的入口
 ```
 class Node():  # 定义一个Node类，构造两个属性，一个是item节点值，一个是节点的下一个指向
     def __init__(self, item=None):
@@ -45,7 +47,7 @@ if __name__ == "__main__":
     print(findbeginofloop(node1).item)
 ```   
     
-# 二叉树的右视图
+## 二叉树的右视图
 ```
 class Solution(object):
     """
@@ -106,18 +108,18 @@ class Solution(object):
         return [rightmost_value_at_depth[depth] for depth in range(max_depth+1)]
 ```
 
-# 有向无环图拓扑排序的实现 
-leetcode题
-[207. 课程表](https://leetcode-cn.com/problems/course-schedule/)
+## 有向无环图拓扑排序的实现 
+leetcode题\
+[207. 课程表](https://leetcode-cn.com/problems/course-schedule/)\
 [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/)
 
-# 二叉搜索树的题型
-leetcode题
-[二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/)
-[二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/)
+## 二叉搜索树的题型
+leetcode题\
+[二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/)\
+[二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/)\
 [二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/)
 
-# 区间列表的交集
+## 区间列表的交集
 ```
 class Solution:
     """
