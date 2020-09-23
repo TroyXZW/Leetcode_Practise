@@ -3,71 +3,69 @@
 ***深度优先搜索（Depth-First-Search）***是搜索算法的一种。是沿着树的深度遍历树的节点，尽可能深的搜索树的分支。\
 当节点v的所有边都己被探寻过，搜索将回溯到发现节点v的那条边的起始节点。这一过程一直进行到已发现从源节点可\
 达的所有节点为止。如果还存在未被发现的节点，则选择其中一个作为源节点并重复以上过程，整个进程反复进行直到\
-所有节点都被访问为止。属于盲目搜索
-DFS是图论里面的一种搜索算法，他可以由一个根节点出发，遍历所有的子节点，进而把图中所有的可以构成树的集合都\
-搜索一遍，达到全局搜索的目的。所以很多问题都可以用dfs来遍历每一种情况，从而得出最优解，但由于时间复杂度太高\
-，我们也叫做暴力搜索。
+所有节点都被访问为止，属于盲目搜索。\
+由于时间复杂度太高，我们也叫做暴力搜索。
+
+***广度优先搜索（Breadth-First-Search）***是从根节点开始，沿着树的宽度遍历树的节点。如果所有节点均被访问，则算法中止。
+
 
 ## 定义一个图的结构
- /B--D-F
-A  / |
- \C--E
+
 ```
-graph={
-    'A':['B','C'],
-    'B':['A','C','D'],
-    'C':['A','B','D','E'],
-    'D':['B','C','E','F'],
-    'E':['C','D'],
-    'F':['D']
+'''
+    /B--D-F
+   A  / |
+    \C--E
+'''
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'C', 'D'],
+    'C': ['A', 'B', 'D', 'E'],
+    'D': ['B', 'C', 'E', 'F'],
+    'E': ['C', 'D'],
+    'F': ['D']
 }
 ```
-
-## BFS 广度优先搜索(使用队列实现)  层序遍历
-```
-def BFS(graph,s):#graph图  s指的是开始结点
-    #需要一个队列
-    queue=[]
-    queue.append(s)
-    seen=set()#看是否访问过该结点
-    seen.add(s)
-    while (len(queue)>0):
-        vertex=queue.pop(0)#保存第一结点，并弹出，方便把他下面的子节点接入
-        nodes=graph[vertex]#子节点的数组
-        for w in nodes:
-            if w not in seen:#判断是否访问过，使用一个数组
-                queue.append(w)
-                seen.add(w)
-        print(vertex)       
-```
-
 ## DFS 深度优先搜索(使用栈实现)  回溯法
 ```
-#DFS指的是深度优先搜索    回溯法(会回看前面的节点)
-#一直往前走，走不下去往回跳
-#使用stack来进行深度的顺序
-#把栈顶元素去除，在把临接点放入
- 
- 
-#其实并不难，只要把队列改成栈就可以了
-def DFS(graph,s):#图  s指的是开始结点
-    #需要一个队列
-    stack=[]
-    stack.append(s)
-    seen=set()#看是否访问过
-    seen.add(s)
-    while (len(stack)>0):
-        #拿出邻接点
-        vertex=stack.pop()#这里pop参数没有0了，最后一个元素
-        nodes=graph[vertex]
-        for w in nodes:
-            if w not in seen:#如何判断是否访问过，使用一个数组
-                stack.append(w)
-                seen.add(w)
+def DFS(graph, s):  # graph图,s指的是开始结点
+    stack = []  # 使用列表作为栈
+    stack.append(s)  # 将首个元素添加到队列中
+    seen = set()  # 使用集合来存放已访问过的节点,看是否访问过该结点
+    seen.add(s)  # 将首个节点添加到集合中表示已访问
+    while (len(stack) > 0):  # 当队列不为空时进行遍历
+        vertex = stack.pop()  ## 从栈尾取出一个节点并查询该节点的相邻节点
+        nodes = graph[vertex]
+        for w in nodes:  # 判断节点是否存在于已访问集合中,即是否已被访问过
+            if w not in seen:  # 如何判断是否访问过，使用一个数组
+                stack.append(w)  # 若未被访问,则添加到队列中
+                seen.add(w)  # 同时添加到已访问集合中,表示已被访问
         print(vertex)
 ```
-
-
+## BFS 广度优先搜索(使用队列实现)  层序遍历
+```
+def BFS(graph, s):  # graph图,s指的是开始结点
+    queue = []  # 需要一个队列
+    queue.append(s)  # 将首个节点添加到队列中
+    seen = set()  # 使用集合来存放已访问过的节点,看是否访问过该结点
+    seen.add(s)  # 将首个节点添加到集合中表示已访问
+    while (len(queue) > 0):  # 当队列不为空时进行遍历
+        vertex = queue.pop(0)  # 从队列头部取出一个节点并查询该节点的相邻节点
+        nodes = graph[vertex]  # 子节点的数组
+        for w in nodes:  # 判断节点是否存在于已访问集合中,即是否已被访问过
+            if w not in seen:  # 判断是否访问过，使用一个数组
+                queue.append(w)  # 若未被访问,则添加到队列中
+                seen.add(w)  # 同时添加到已访问集合中,表示已被访问
+        print(vertex)      
+```
+输出结果
+```
+print("BFS", end=" ")
+BFS(graph, "A")
+print("")
+print("DFS", end=" ")
+DFS(graph, "A")
+```
 
 # 2020.9.17 京东算法岗笔试题目分享
 
