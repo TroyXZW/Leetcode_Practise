@@ -50,8 +50,31 @@ def Backpack_problem(N, V, volumn, value, f):
     return f[-1][-1]
 
 
+def show_res(N, V, volumn, f):
+    """
+    显示哪些被选中
+    :param N: 
+    :param V: 
+    :param volumn: 
+    :param f: 
+    :return: 
+    """
+    x = [False for i in range(N)]
+    j = V
+    for i in range(N, 0, -1):
+        if f[i][j] > f[i - 1][j]:
+            # 说明x[i - 1]加进来了，不是取f[i - 1][j]而是f[i - 1][j - volumn[i]] + value[i]
+            x[i - 1] = True
+            j -= volumn[i - 1]
+    print('选择的物品为:')
+    for i in range(N):
+        if x[i]:
+            print('第', i, '个,')
+
+
 if __name__ == '__main__':
-    print(Backpack_problem_lessspace(N, V, volumn, value, f))
+    print(Backpack_problem(N, V, volumn, value, f))
+    show_res(N, V, volumn, f)
 
 ```
 上面的基本实现时间复杂度为O(nW)，空间复杂度为O(nW)，事实上空间可以做优化。\
