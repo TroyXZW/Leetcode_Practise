@@ -1,12 +1,12 @@
 # 深度优先（DFS）和广度优先（BFS）
 
-***深度优先搜索（Depth-First-Search）***是搜索算法的一种。是沿着树的深度遍历树的节点，尽可能深的搜索树的分支。\
+**深度优先搜索（Depth-First-Search）**是搜索算法的一种。是沿着树的深度遍历树的节点，尽可能深的搜索树的分支。\
 当节点v的所有边都己被探寻过，搜索将回溯到发现节点v的那条边的起始节点。这一过程一直进行到已发现从源节点可\
 达的所有节点为止。如果还存在未被发现的节点，则选择其中一个作为源节点并重复以上过程，整个进程反复进行直到\
 所有节点都被访问为止，属于盲目搜索。\
 由于时间复杂度太高，我们也叫做暴力搜索。
 
-***广度优先搜索（Breadth-First-Search）***是从根节点开始，沿着树的宽度遍历树的节点。如果所有节点均被访问，则算法中止。
+**广度优先搜索（Breadth-First-Search）**是从根节点开始，沿着树的宽度遍历树的节点。如果所有节点均被访问，则算法中止。
 
 
 ## 定义一个图的结构
@@ -100,55 +100,35 @@ NO
 
 ```
 def dfs(graph, i, j):
-    if i < 0 or j < 0 or i >= len(graph) or j >= len(graph[0]) or graph[i][j] == '#': return False
-    if graph[i][j] == 'E': return True
-    graph[i][j] = '#'
-    res = dfs(graph, i+1, j) or dfs(graph, i-1, j) or dfs(graph, i, j+1) or dfs(graph, i, j-1)
-    graph[i][j] = '.'
+    if i < 0 or j < 0 or i >= len(graph) or j >= len(graph[0]) or graph[i][j] == '#':  # 越界或有障碍物
+        return False
+    if graph[i][j] == 'E':  # 找到公主
+        return True
+    graph[i][j] = '#'  # 这一步是让这个位置在下一步不会重复走到
+    res = dfs(graph, i + 1, j) or dfs(graph, i - 1, j) or dfs(graph, i, j + 1) or dfs(graph, i, j - 1)  # 上下左右都试一试
+    graph[i][j] = '.'  # 恢复这个位置的为'.'，确保其他方法可以走到
     return res
 
-t = int(input().strip())
-while t > 0:
-    line = input().strip().split()
-    n, m = [int(x) for x in line]
-    graph = []
-    for i in range(n):
-        line = input().strip()
-        graph.append(list(line))
-    res = False
-    for i in range(n):
-        for j in range(m):
-            if graph[i][j] == 'S':
-                res = dfs(graph, i, j)
-    if res: print("YES")
-    else: print("NO")
-    t -= 1
-```
-```
-def dfs(graph,i,j):
-    if i<0&nbs***bsp;j<0&nbs***bsp;i >= len(graph)&nbs***bsp;j >= len(graph[0])&nbs***bsp;graph[i][j]=='#':return False
-    if graph[i][j] =="E":return True
-    graph[i][j] = '#'#这一步是让这个位置在下一步不会重复走到
-    bz = dfs(graph,i+1,j)&nbs***bsp;dfs(graph,i-1,j)&nbs***bsp;dfs(graph,i,j+1)&nbs***bsp;dfs(graph,i,j-1)
-    graph[i][j] = '.'#恢复这个位置的.
-    return bz
+
+def find_my_princess(t):
+    while t > 0:
+        n, m = list(map(int, input().split()))  # 行列数
+        graph = []
+        for i in range(n):  # 以列表形式存储矩阵
+            graph.append(list(input()))
+        res = False
+        for i in range(n):
+            for j in range(m):
+                if graph[i][j] == 'S':  # 先遍历矩阵找到王子所在位置
+                    res = dfs(graph, i, j)
+        if res:
+            print("YES")
+        else:
+            print("NO")
+        t -= 1
 
 
-
-
-t = int(input())
-while t>0:
-    n , m = map(int,input().split())
-    graph = []
-    for i in range(n):
-        graph.append(list(input()))
-    for i in range(n):
-        for j in range(m):
-            if graph[i][j] =='S':
-                res = dfs(graph,i,j)
-    if res:
-        print('YES')
-    else:
-        print('NO')
-    t -= 1
+if __name__ == '__main__':
+    t = int(input())
+    find_my_princess(t)
 ```
