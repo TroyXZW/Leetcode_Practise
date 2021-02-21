@@ -1,4 +1,4 @@
-# 解密码锁 p56-算法小炒
+# 解密码锁 p56-算法小抄
 
 ```
 def replace_char(string, char, index):
