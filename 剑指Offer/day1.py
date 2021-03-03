@@ -48,6 +48,46 @@ def findRepeatNumber(nums):
 
 print(findRepeatNumber(nums))
 
+
+# ---------------------------------------------------
+# 不修改数组找出重复数字 P41
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+def count_range(numbers, length, start, end):
+    if not numbers:
+        return 0
+    count = 0
+    for i in range(length):
+        if numbers[i] >= start and numbers[i] <= end:
+            count += 1
+    return count
+
+
+def get_duplications(numbers, length):
+    if not numbers or length == 0:
+        return -1
+    start = 1
+    end = length - 1
+    while end >= start:
+        mid = (start + end) >> 1
+        count = count_range(numbers, length, start, mid)
+        if end == start:
+            if count > 1:
+                return start
+            else:
+                break
+        if count > (mid - start + 1):
+            end = mid
+        else:
+            start = mid + 1
+    return -1
+
+
+if __name__ == "__main__":
+    res = get_duplications([2, 3, 5, 4, 3, 2, 6, 7], 8)
+    print(res)
+
 # ------------------------------------------- 4. 二维数组中的查找 -------------------------------------------
 # ---------------------------------------------------
 matrix = [
