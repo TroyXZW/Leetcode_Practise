@@ -51,19 +51,20 @@ class Solution:
     """
 
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        self.dic, self.po = {}, preorder
-        for i in range(len(inorder)):
-            self.dic[inorder[i]] = i  # 字典的键为中序遍历的值，值为对应的索引
-        return self.recur(0, 0, len(inorder) - 1)
+        # 根节点在前序遍历的索引 root 、子树在中序遍历的左边界 left 、子树在中序遍历的右边界 right
+        def recur(root, left, right):
+            if left > right:
+                return                                            # 递归终止
+            node = TreeNode(preorder[root])                       # 建立根节点
+            i = dic[preorder[root]]                               # 划分根节点、左子树、右子树
+            node.left = recur(root + 1, left, i - 1)              # 开启左子树递归
+            node.right = recur((i - left) + root + 1, i + 1, right) # 开启右子树的下层递归，i - in_left为左子树长度
+            return node                                           # 回溯返回根节点
 
-    def recur(self, pre_root, in_left, in_right):  # pre_root为前序遍历中根节点的索引，in_left, in_right分别为中序遍历中左边界索引和右边界索引
-        if in_left > in_right:
-            return None  # 终止条件：中序遍历为空
-        root = TreeNode(self.po[pre_root])  # 建立当前子树的根节点
-        i = self.dic[self.po[pre_root]]  # 搜索根节点在中序遍历中的索引，从而可对根节点、左子树、右子树完成划分。
-        root.left = self.recur(pre_root + 1, in_left, i - 1)  # 开启左子树的下层递归
-        root.right = self.recur(i - in_left + pre_root + 1, i + 1, in_right)  # 开启右子树的下层递归，i - in_left为左子树长度
-        return root  # 返回根节点，作为上层递归的左（右）子节点
+        dic, preorder = {}, preorder
+        for i in range(len(inorder)):
+            dic[inorder[i]] = i
+        return recur(0, 0, len(inorder) - 1)
 
 
 class Solution:
