@@ -103,10 +103,10 @@ class CQueue:
         self.A.append(value)
 
     def deleteHead(self) -> int:
-        if self.B:
-            return self.B.pop()
-        if not self.A:
-            return -1  # 若队列中没有元素，deleteHead 操作返回 -1
-        while self.A:
-            self.B.append(self.A.pop())
-        return self.B.pop()
+        if not self.stack2:  # 只要stack2为空，先把stack1都加进去
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        if not self.stack2:  # stack1都加进去了还空，那就是没了
+            return -1
+        else:
+           return self.stack2.pop()  # 不为空即说明此时stack1为空全加入stack2且不为空，出栈
