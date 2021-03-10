@@ -70,6 +70,28 @@ def movingCount(m, n, k):
 
 
 # ---------------------------------------------------
+class Solution:
+    # 自己的解法
+    def movingCount(self, m: int, n: int, k: int) -> int:
+        def num(s):
+            count=0
+            while s!=0:
+                count+=s%10
+                s//=10
+            return count
+        def dfs(i,j):
+            if i>=m or j>=n or num(i)+num(j)>k or (i,j) in visited:
+                return 0
+            down=dfs(i+1,j)
+            visited.add((i+1,j))
+            right=dfs(i,j+1)
+            visited.add((i,j+1))
+            return 1+down+right
+
+        visited=set((0,0))
+        return dfs(0,0)
+    
+# ---------------------------------------------------
 def movingCount1(m, n, k):
     """
     广度优先遍历 BFS:利用队列实现广度优先遍历
@@ -78,7 +100,7 @@ def movingCount1(m, n, k):
     空间复杂度 O(MN)： 最差情况下，Set visited 内存储矩阵所有单元格的索引，使用 O(MN)的额外空间
     https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/solution/mian-shi-ti-13-ji-qi-ren-de-yun-dong-fan-wei-dfs-b/
     """
-    queue, visited, = [(0, 0, 0, 0)], set()
+    queue, visited = [(0, 0, 0, 0)], set()
     while queue:
         i, j, si, sj = queue.pop(0)
         if i >= m or j >= n or k < si + sj or (i, j) in visited:
@@ -92,39 +114,57 @@ def movingCount1(m, n, k):
 print(movingCount(m1, n1, k1))
 print(movingCount1(m2, n2, k3))
 
+# ---------------------------------------------------
+class Solution:
+    # 自己的解法
+    def movingCount(self, m: int, n: int, k: int) -> int:
+        def num(s):
+            count=0
+            while s!=0:
+                count+=s%10
+                s//=10
+            return count
+        
+        res=[(0,0)]
+        visited=set()
+        while res:
+            size=len(res)
+            for i in range(size):
+                i,j=res.pop(0)
+                if i >= m or j >= n or num(i)+num(j)>k or (i, j) in visited:
+                    continue
+                visited.add((i,j))
+                res.append((i+1,j))
+                res.append((i,j+1))
+        return len(visited)
+
 # ------------------------------------------- 14-I. 剪绳子 -------------------------------------------
 # ---------------------------------------------------
 n1 = 2
 n2 = 10
 
-"""
-def cuttingRope(n):
-    """
-# 动态规划
-# 不知道为什么会报错
-# TypeError: unsupported operand type(s) for *: 'int' and 'builtin_function_or_method'
-"""
-if n < 2:
-    return 0
-if n == 2:
-    return 1
-if n == 3:
-    return 2
-product = [0] * (n + 1)
-product[1] = 1
-product[2] = 2
-product[3] = 3
-for i in range(4, n + 1):
-    max_res = 0
-    for j in range(1, i // 2 + 1):
-        product_res = product[j] * product[i - j]
-        if max_res < product_res:
-            max_res = product_res
-        product[i] = max
-res = max(product)
 
-return res
-"""
+def cuttingRope(n):
+    if n < 2:
+        return 0
+    if n == 2:
+        return 1
+    if n == 3:
+        return 2
+    product = [0] * (n + 1)
+    product[1] = 1
+    product[2] = 2
+    product[3] = 3
+    for i in range(4, n + 1):
+        max_res = 0
+        for j in range(1, i // 2 + 1):
+            product_res = product[j] * product[i - j]
+            if max_res < product_res:
+                max_res = product_res
+            product[i] = max_res
+    res = max(product)
+
+    return res
 
 
 # ---------------------------------------------------
