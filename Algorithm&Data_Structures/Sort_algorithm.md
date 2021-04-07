@@ -3,7 +3,7 @@
 
 比较类：\
     交换类排序：冒泡排序、快速排序\
-    选择类排序：[选择排序](https://github.com/TroyXZW/Leetcode_Practise/edit/master/Algorithm&Data_Structures/Sort_algorithm.md#选择排序)、堆排序\
+    选择类排序：[选择排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#1选择排序)、堆排序\
     插入类排序：插入排序、希尔排序\
     归并类排序：归并排序\
 非比较类：\
@@ -13,7 +13,7 @@
     其他
 
 
-## 选择排序
+## 1.选择排序
 时间复杂度 O(n2)
 ```
 def selectionSort(lyst):
