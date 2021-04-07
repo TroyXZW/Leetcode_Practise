@@ -2,7 +2,7 @@
 
 
 比较类：\
-    交换类排序：冒泡排序、快速排序\
+    交换类排序：[冒泡排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#2冒泡排序)、快速排序\
     选择类排序：[选择排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#1选择排序)、堆排序\
     插入类排序：插入排序、希尔排序\
     归并类排序：归并排序\
@@ -27,7 +27,7 @@ def selectionSort(lyst):
     print("selectionSort:", lyst)
 ```
 
-## 冒泡排序
+## 2.冒泡排序
 时间复杂度 O(n2)
 ```
 def bubbleSort_improved(items):
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     print(bubbleSort_improved(a))
 ```
 
-## 插入排序
+## 3.插入排序
 时间复杂度 O(n2)
 ```
 def insertionSort(arr):
@@ -84,7 +84,7 @@ def InsertSort(lst):
     return lst
 ```
 
-## 快速排序
+## 4.快速排序
 快速排序的基本思想为：\
 两个哨兵变量，一个pivot，j--，i++，，lyst[j]<pivot停，lyst[i]>pivot停，ij相碰时将lyst[i]与pivot进行对调\
 需要把list作为一个接口参数，不然deecopy的引用参数无法传入，直接传入lyst的引用，会修改原始的lyst变量\
@@ -159,7 +159,7 @@ def QuickSort(lst):
     return lst
 ```
 
-## 归并排序
+## 5.归并排序
 快排与合并排序的基础思想都是递归。对于合并排序每一次都拆成了两个子序列，直到最后两个子序列的长度均为1\
 时间复杂度 O(nlogn)
 ```
@@ -192,7 +192,7 @@ def merge(left, right):
 print("mergeSort:", mergeSort(lyst))
 ```
 
-## 堆排序
+## 6.堆排序
 1.从下至上，从右至左，对每个节点进行调整，以得到一个大顶堆\
 2.首尾互换，尾部元素已是有序序列，堆元素个数减1，此部分仍为无序序列，继续调整\
 最坏，最好，平均时间复杂度均为O(nlogn)
@@ -233,7 +233,7 @@ heap_sort(l)
 print(l)
 ```
 
-## 基数排序
+## 7.基数排序
 时间复杂度 O(n)
 ```
 import math
@@ -277,7 +277,7 @@ if __name__ == "__main__":
     print(a)
 ```
 
-## 计数排序
+## 8.计数排序
 计数排序只能给非负整数排序，如果要排序的数据是其他类型的，要将其在不改变相对大小的情况下，转化为非负整数\
 桶内排序,插入排序\
 时间复杂度 O(n)
@@ -309,7 +309,7 @@ if __name__ == '__main__':
     print("List sort is:", result)
 ```
 
-## 桶排序
+## 9.桶排序
 时间复杂度 O(n)
 ```
 def insertionSort(b):
