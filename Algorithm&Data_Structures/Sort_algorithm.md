@@ -13,7 +13,7 @@
     其他
 
 
-## 1.选择排序
+## 选择排序
 时间复杂度 O(n2)
 ```
 def selectionSort(lyst):
