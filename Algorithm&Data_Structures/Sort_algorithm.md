@@ -2,7 +2,7 @@
 
 
 比较类：\
-    交换类排序：[冒泡排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#2冒泡排序)、快速排序\
+    交换类排序：[冒泡排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#冒泡排序)、快速排序\
     选择类排序：[选择排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#1选择排序)、堆排序\
     插入类排序：插入排序、希尔排序\
     归并类排序：归并排序\
@@ -27,7 +27,7 @@ def selectionSort(lyst):
     print("selectionSort:", lyst)
 ```
 
-## 2.冒泡排序
+## 冒泡排序
 时间复杂度 O(n2)
 ```
 def bubbleSort_improved(items):
