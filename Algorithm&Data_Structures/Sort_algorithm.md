@@ -1,5 +1,5 @@
 # 常见排序算法:smirk:
-
+[用Python手写十大经典排序算法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523007&idx=2&sn=7b20f8ceec2befc903c1e8bfebb38b7e&source=41#wechat_redirect)
 
 - 比较类：
     - 交换类排序：[冒泡排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#冒泡排序)、[快速排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#快速排序)
