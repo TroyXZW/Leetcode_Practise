@@ -2,7 +2,7 @@
 [用Python手写十大经典排序算法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523007&idx=2&sn=7b20f8ceec2befc903c1e8bfebb38b7e&source=41#wechat_redirect)
 
 - 比较类：
-    - 交换类排序：[冒泡排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#冒泡排序)、[快速排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#快速排序)
+    - 交换类排序：[冒泡排序](#冒泡排序)、[快速排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#快速排序)
     - 选择类排序：[选择排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#选择排序)、[堆排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#堆排序)
     - 插入类排序：[插入排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#插入排序)、希尔排序
     - 归并类排序：[归并排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#归并排序)
