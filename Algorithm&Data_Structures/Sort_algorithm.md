@@ -2,12 +2,12 @@
 [用Python手写十大经典排序算法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523007&idx=2&sn=7b20f8ceec2befc903c1e8bfebb38b7e&source=41#wechat_redirect)
 
 - 比较类：
-    - 交换类排序：[冒泡排序](#冒泡排序)、[快速排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#快速排序)
-    - 选择类排序：[选择排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#选择排序)、[堆排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#堆排序)
-    - 插入类排序：[插入排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#插入排序)、希尔排序
-    - 归并类排序：[归并排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#归并排序)
+    - 交换类排序：[冒泡排序](#冒泡排序)、[快速排序](#快速排序)
+    - 选择类排序：[选择排序](#选择排序)、[堆排序](#堆排序)
+    - 插入类排序：[插入排序](#插入排序)、希尔排序
+    - 归并类排序：[归并排序](#归并排序)
 - 非比较类：
-    - 分布类排序：[基数排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#基数排序)，[计数排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#计数排序)，[桶排序](https://github.com/TroyXZW/Leetcode_Practise/blob/master/Algorithm&Data_Structures/Sort_algorithm.md#桶排序)
+    - 分布类排序：[基数排序](#基数排序)，[计数排序](#计数排序)，[桶排序](#桶排序)
     - 并发类排序
     - 混合类排序
     - 其他
@@ -157,6 +157,46 @@ def QuickSort(lst):
         return lst
     quicksort(lst, 0, n - 1)
     return lst
+```
+### 快排求中位数
+```
+def part_sort(a, start, end):
+    left = start
+    right = end
+    key = a[end]
+    while left < right:
+        while a[left] <= key and left < right:
+            left += 1
+        while a[right] > key and left < right:
+            right -= 1
+        a[left], a[right] = a[right], a[left]
+    a[right], a[end] = a[end], a[right]
+    return left
+
+
+def main(a):
+    start = 0
+    end = len(a) - 1
+    mid = (start + end) // 2
+    div = part_sort(a, start, end)
+    while div != mid:
+        if div < mid:
+            div = part_sort(a, div + 1, end)
+        else:
+            div = part_sort(a, start, div - 1)
+
+    return a[mid]
+
+
+if __name__ == "__mian__":
+    a = [1, 2, 3, 4, 5, 6, 7, 8]
+    if len(a) % 2 == 1:
+        print(main(a))
+    else:
+        a_1 = a.pop(main(a))
+        a_2 = main(a)
+        print((a_1 + a_2) / 2)
+
 ```
 
 ## 归并排序
