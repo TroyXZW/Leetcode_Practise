@@ -30,3 +30,36 @@ eg:<br>
 2 <br>
 5 1 <br>
 2 4
+
+
+### 杨辉三角 <br>
+
+```
+def triangle(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [[1]]
+    elif n == 2:
+        return [[1], [1, 1]]
+    res = [[1], [1, 1]]
+
+    while n - 3 >= 0:
+        tmp = res[-1]
+        sub_res = [1]
+        i = 0
+        while i < len(tmp) - 1:
+            sub_res.append(tmp[i] + tmp[i + 1])
+            i += 1
+        sub_res.append(1)
+        res.append(sub_res)
+        n -= 1
+    return res
+
+
+if __name__ == "__main__":
+    # res = triangle(2)
+    # print(res)
+    print(triangle(5))
+
+```
