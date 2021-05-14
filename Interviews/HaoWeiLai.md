@@ -2,4 +2,70 @@
 
 
 ### 子链表反转
+没做出来。。。
+```
+#!/usr/bin/env python 
+# -*- coding:utf-8 -*-
+class Node():
+    def __init__(self, root):
+        self.node = root
+        self.next = None
+
+
+def func_1(node, times):
+    if not node:
+        return None
+    pre = None
+    cur = node
+    while times >= 0:
+        tmp = cur.next
+        cur.next = pre
+        pre = cur
+        cur = tmp
+        times -= 1
+    return pre, cur
+
+
+def func(node, n, m):
+    head = node
+    while n > 1:
+        node = node.next
+        n -= 1
+    times = m - n
+
+    pre, tmp = func_1(node, times)
+    node.next = pre
+    while pre:
+        if not pre.next:
+            pre.next = tmp
+        pre = pre.next
+
+    return head
+
+
+def show_link(root):
+    while root:
+        print(root.node)
+        root = root.next
+
+
+a = Node(7)
+b = Node(6)
+c = Node(5)
+d = Node(8)
+e = Node(9)
+f = Node(19)
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+# a = None
+n, m = 3, 4
+res = func(a, n, m)
+head = res
+
+show_link(head)
+
+```
 
