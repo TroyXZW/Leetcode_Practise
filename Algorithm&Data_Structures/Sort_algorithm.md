@@ -1,5 +1,6 @@
 # 常见排序算法:smirk:
 [用Python手写十大经典排序算法](https://mp.weixin.qq.com/s?__biz=Mzg4NDQwNTI0OQ==&mid=2247523007&idx=2&sn=7b20f8ceec2befc903c1e8bfebb38b7e&source=41#wechat_redirect)
+[十大排序算法](https://mp.weixin.qq.com/s?__biz=Mzg2NzA4MTkxNQ==&mid=2247485559&idx=1&sn=cf5b0a7d34374f5c31617e0987835b52&chksm=ce4043a3f937cab509d05c95e60277a88f8107c540b0ad4ad96c09426060602c53fb6309d2fc&mpshare=1&scene=1&srcid=0320sCIdsnUuWriSaEwBjEx2&sharer_sharetime=1584664173628&sharer_shareid=f21488698f08111d3eb92e4ab561e2fa&key=f811f300ed54aae9c56cd3f90e086212ef5c83e3dda5935901c9a1531d44096ac9f6371f5b805503a3aa7cf7de5ac41748dc5d51d8df289f31362e312ef2d5694e08e59790c37fb49e0dc7ec21ab1421&ascene=1&uin=MjA4NzM5MDAzMw%3D%3D&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=A6RKwoOqPu4bvg02pfkaJGs%3D&pass_ticket=TuhqbAhmS%2BZUBYWqTsAwdikP9Zkjup19EwW501RLZwe2ZHOVcpg32uhDMSHaAcfp)
 
 - 比较类：
     - 交换类排序：[冒泡排序](#冒泡排序)、[快速排序](#快速排序)
